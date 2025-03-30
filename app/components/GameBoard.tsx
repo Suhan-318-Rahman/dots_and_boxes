@@ -103,11 +103,13 @@ export default function GameBoard({
 
   useEffect(() => {
     if (turn === "Player 2" && gameConfig.gameMode === "Player vs Computer") {
-      if (gameConfig.level === "Level 1") {
-        computerMoveLevel1(boxMap, lineMap, handleLineClick);
-      } else if (gameConfig.level === "Level 2") {
-        computerMoveLevel2(boxMap, lineMap, handleLineClick);
-      }
+      setTimeout(() => {
+        if (gameConfig.level === "Level 1") {
+          computerMoveLevel1(boxMap, lineMap, handleLineClick);
+        } else if (gameConfig.level === "Level 2") {
+          computerMoveLevel2(boxMap, lineMap, handleLineClick);
+        }
+      }, 3000);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lineMap]);

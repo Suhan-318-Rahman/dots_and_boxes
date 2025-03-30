@@ -12,18 +12,21 @@ const lineColorForPlayer2 = "green";
 
 const dotColor = "#A1AEB1";
 
+const defaultBoxColor = "white";
+const defaultLineColor = "#f7d9bc";
+
 export function getBoxColor(box: BoxProps) {
     if (box.isCompleted) {
         return box.winner === "Player 1" ? boxColorForPlayer1 : boxColorForPlayer2;
     }
-    return "white";
+    return defaultBoxColor;
 }
 
 export function getLineColor(line: LineProps) {
     if (line.isClicked) {
         return line.clickedBy === "Player 1" ? lineColorForPlayer1 : lineColorForPlayer2;
     }
-    return "#f7d9bc";
+    return defaultLineColor;
 }
 
 export function getDotColor() {
